@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>LOBA Coffee & Bakery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #0c3d2a;
+    --forest-deep: #082a1c;
+    --cream: #f3ead2;
+    --cream-dim: #cdbf9c;
+    --gold: #c9a05f;
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+  html,body{ margin:0; padding:0; }
+  body{
+    min-height:100svh;
+    background:
+      radial-gradient(circle at 50% 0%, var(--forest) 0%, var(--forest-deep) 78%);
+    color:var(--cream);
+    font-family:'Jost', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px 20px;
+  }
+
+  .page{
+    width:100%;
+    max-width:400px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+
+  .stamp{
+    position:relative;
+    width:150px;
+    height:150px;
+    margin-bottom:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .stamp svg{
+    position:absolute;
+    top:0; left:0;
+    width:150px;
+    height:150px;
+    animation: spin 34s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .stamp svg{ animation:none; }
+  }
+  .stamp img{
+    width:96px;
+    height:96px;
+    border-radius:50%;
+    position:relative;
+    z-index:1;
+    box-shadow: 0 0 0 1px rgba(243,234,210,0.18);
+  }
+  @keyframes spin{
+    from{ transform:rotate(0deg); }
+    to{ transform:rotate(360deg); }
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:34px;
+    letter-spacing:0.5px;
+    margin:0 0 6px;
+    color:var(--cream);
+  }
+  .tagline{
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 40px;
+  }
+
+  .links{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:36px;
+  }
+
+  .link-btn{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    width:100%;
+    padding:16px 20px;
+    border-radius:999px;
+    border:1px solid rgba(243,234,210,0.28);
+    background:rgba(243,234,210,0.04);
+    color:var(--cream);
+    text-decoration:none;
+    font-family:'Jost', sans-serif;
+    font-size:15px;
+    letter-spacing:0.3px;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  }
+  .link-btn:active{ transform:scale(0.98); }
+  .link-btn:hover{
+    background:rgba(243,234,210,0.09);
+    border-color:var(--gold);
+  }
+  .icon{
+    flex:0 0 auto;
+    width:22px;
+    height:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold);
+  }
+  .icon svg{ width:100%; height:100%; }
+  .label{
+    flex:1;
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .label .main{ font-size:15px; color:var(--cream); }
+  .label .sub{ font-size:11.5px; color:var(--cream-dim); letter-spacing:0.4px; }
+  .arrow{ color:var(--cream-dim); font-size:16px; }
+
+  .footer{
+    font-size:10.5px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+    color:var(--cream-dim);
+    opacity:0.7;
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="stamp">
+      <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <path id="ringPath" d="M 75,75 m -62,0 a 62,62 0 1,1 124,0 a 62,62 0 1,1 -124,0" />
+        </defs>
+        <circle cx="75" cy="75" r="72" fill="none" stroke="rgba(201,160,95,0.35)" stroke-width="1"/>
+        <text font-family="Jost, sans-serif" font-size="9.5" letter-spacing="4" fill="#c9a05f">
+          <textPath href="#ringPath" startOffset="0%">SUADIYE &#8226; COFFEE &#8226; BAKERY &#8226; SUADIYE &#8226; COFFEE &#8226; BAKERY &#8226;</textPath>
+        </text>
+      </svg>
+      <img src="data:image/png;base64,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" alt="Loba Coffee & Bakery logosu">
+    </div>
+
+    <h1>LOBA</h1>
+    <p class="tagline">Coffee &amp; Bakery</p>
+
+    <div class="links">
+      <a class="link-btn" href="https://app.kimyon.app/lobacafesuadiye/main" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 5.5c-1.8-1.4-4.2-2-7-2v13.6c2.8 0 5.2.6 7 2 1.8-1.4 4.2-2 7-2V3.5c-2.8 0-5.2.6-7 2Z" stroke="#c9a05f" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M12 5.5v13.6" stroke="#c9a05f" stroke-width="1.6"/>
+          </svg>
+        </span>
+        <span class="label">
+          <span class="main">Menümüze göz at</span>
+          <span class="sub">Kahveler, tatlılar ve daha fazlası</span>
+        </span>
+        <span class="arrow">&#8250;</span>
+      </a>
+
+      <a class="link-btn" href="https://search.google.com/local/writereview?placeid=ChIJvZSntErHyhQR12RBKUJ0Jhg" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.6 12.23c0-.68-.06-1.36-.18-2H12v3.99h5.44a4.7 4.7 0 0 1-2.02 3.09v2.53h3.26c1.9-1.76 3-4.36 3-7.61Z" fill="#c9a05f"/>
+            <path d="M12 22c2.7 0 4.97-.9 6.63-2.43l-3.26-2.53c-.9.6-2.06.96-3.37.96-2.6 0-4.8-1.75-5.6-4.11H3.03v2.6A10 10 0 0 0 12 22Z" fill="#c9a05f"/>
+            <path d="M6.4 13.89a5.9 5.9 0 0 1 0-3.78v-2.6H3.03a10 10 0 0 0 0 9l3.37-2.62Z" fill="#c9a05f"/>
+            <path d="M12 6a5.4 5.4 0 0 1 3.82 1.5l2.87-2.87A9.6 9.6 0 0 0 12 2 10 10 0 0 0 3.03 7.51l3.37 2.6C7.2 7.75 9.4 6 12 6Z" fill="#c9a05f"/>
+          </svg>
+        </span>
+        <span class="label">
+          <span class="main">Google'da yorum yap</span>
+          <span class="sub">Bize birkaç yıldız bırak</span>
+        </span>
+        <span class="arrow">&#8250;</span>
+      </a>
+
+      <a class="link-btn" href="https://www.instagram.com/lobacoffee.suadiye?igsh=MWozaThlNjcxcDgwNw==" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="#c9a05f" stroke-width="1.6"/>
+            <circle cx="12" cy="12" r="4.2" stroke="#c9a05f" stroke-width="1.6"/>
+            <circle cx="17.15" cy="6.85" r="1.1" fill="#c9a05f"/>
+          </svg>
+        </span>
+        <span class="label">
+          <span class="main">Instagram'da takip et</span>
+          <span class="sub">@lobacoffee.suadiye</span>
+        </span>
+        <span class="arrow">&#8250;</span>
+      </a>
+
+      <a class="link-btn" href="https://loba.com.tr" target="_blank" rel="noopener">
+        <span class="icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#c9a05f" stroke-width="1.6"/>
+            <path d="M3 12h18" stroke="#c9a05f" stroke-width="1.6"/>
+            <path d="M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9s1.3-6.5 3.8-9Z" stroke="#c9a05f" stroke-width="1.6"/>
+          </svg>
+        </span>
+        <span class="label">
+          <span class="main">Loba'yı keşfet</span>
+          <span class="sub">loba.com.tr</span>
+        </span>
+        <span class="arrow">&#8250;</span>
+      </a>
+    </div>
+
+    <p class="footer">Suadiye</p>
+
+  </div>
+
+</body>
+</html>
